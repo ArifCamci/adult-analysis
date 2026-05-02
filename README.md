@@ -1,1 +1,8 @@
-# adult-analysis
+Income Predictor — Adult Census Dataset
+This project explores which variables most affect whether a person earns above or below $50,000 a year, using the Adult Income dataset derived from 1994 U.S. Census data. The dataset includes features like age, education, workclass, marital status, occupation, race, sex, and hours worked per week. After cleaning the data and removing missing values, we performed exploratory data analysis with visualizations showing income distribution across each demographic and work-related group.
+To identify the most impactful variables, we implemented a greedy forward selection algorithm on top of an XGBoost classifier. Starting from an empty feature set, each round tests every remaining feature and permanently adds whichever one improves 5-fold cross-validation accuracy the most. The process stops when no feature improves the model further. The order features are added directly reflects their importance — features selected in earlier rounds have a stronger relationship with income.
+Beyond predictive accuracy, we examined fairness by analyzing income rates across race and sex groups, acknowledging that some variables may capture systemic patterns rather than individual factors. The full analysis including data cleaning, EDA, modeling, and feature selection is available in the notebook. Final model accuracy and the ranked feature list are documented in the report.
+
+Team: Arif Camci, Saif Shaikh, Ivan Wu (Group AIS) — The University of Texas at Austin
+Tools: Python, XGBoost, scikit-learn, Altair, Jupyter/Google Colab
+Dataset: Kaggle — Adult Income Dataset
